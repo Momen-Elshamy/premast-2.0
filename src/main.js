@@ -1,7 +1,5 @@
-import hellobubble from "./bubble/elements/hellobubble.js";
+import bubble from "./bubble/bubble";
 
-window.helloBubbleApp = {
-  elements: {
-    helloBubble: hellobubble,
-  },
+window.premast2 = {
+   bubble: bubble(),
 };

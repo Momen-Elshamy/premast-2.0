@@ -1,9 +1,9 @@
 {
-  "name": "hello-bubble-app",
+  "name": "premast-2.0",
   "version": "1.0.0",
-  "main": "dist/hello-bubble-app.cjs.js",
-  "module": "dist/hello-bubble-app.esm.js",
-  "browser": "dist/hello-bubble-app.umd.js",
+  "main": "dist/premast-2.0.cjs.js",
+  "module": "dist/premast-2.0.esm.js",
+  "browser": "dist/premast-2.0.umd.js",
   "dependencies": {
     "lit": "^2.2.7",
     "ms": "^2.0.0",
