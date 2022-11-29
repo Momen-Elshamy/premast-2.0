@@ -32,3 +32,26 @@ export async function Login(email, password) {
       response: await response.json(),
    };
 }
+
+// api routes for update user data
+/**
+ *
+ * @param {string} email user email
+ * @param {object} data user data need to update
+ * @param {string} data.full_name user full name
+ * @param {string} data.avatar user avatar url
+ * @returns {object} response
+ */
+export async function UpdateUser(data) {
+   // @do convert plus api from test to live on premast.com server (wp)
+   let url = "https://premast.com/wp-json/pmst/v1/admin/update-user";
+   let headers = {
+      "Content-Type": "application/json",
+   };
+   let response = await fetch(url, {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(data),
+   });
+   return response.json();
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <div id="profile-info">
+         <h2>Profile info</h2>
+         <form action="profile-info-form" id="profile-info-form">
+            <label for="avatar">avatar</label>
+            <img src="" alt="" />
+            <input type="text" name="avatar" id="avatar" />
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" />
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" />
+            <button type="submit">Save</button>
+         </form>
+      </div>
+   </body>
+</html>
+
+<script type="module">
+   import { UpdateUser } from "../../src/services/premast.com/user.js";
+   const profileInfoForm = document.querySelector("#profile-info-form");
+   profileInfoForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      let email = document.querySelector("#email").value;
+      let name = document.querySelector("#name").value;
+      let avatar = document.querySelector("#avatar").value;
+      let data = {
+         email: email,
+         full_name: name,
+         avatar: avatar,
+      };
+      UpdateUser(data).then((response) => {
+         console.log(response);
+      });
+   });
+</script>
+
+<style>
+   form {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      gap: 1rem;
+   }
+</style>

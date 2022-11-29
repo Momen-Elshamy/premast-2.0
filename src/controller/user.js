@@ -67,9 +67,9 @@ export async function login(email, password) {
       let loginPlus = await LoginPlus(email, password);
       let loginPremast = await LoginPremast(email, password);
       if (loginPlus.status === "success" || loginPremast.status === 200) {
-         // @do signup on app.premast.com
          let signupApp = await SignupApp(email, password);
          if (signupApp.status === "success") {
+            // @do change user data (profile image, name, etc) from data returned from endpoints
             result = {
                success: true,
                login_link: signupApp.response.login_link,
